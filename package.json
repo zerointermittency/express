@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "ZIExpress.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint **/*.js",
     "test": "nyc node --max_old_space_size=4096 test/index.js",
     "test-nyan": "REPORTER=nyan node --max_old_space_size=4096 test/index.js",
     "benchmark": "node --max_old_space_size=4096"
@@ -22,15 +23,16 @@
     "url": "https://github.com/zerointermittency/express/issues"
   },
   "dependencies": {
+    "@zerointermittency/date": "^1.0.0",
     "compression": "^1.7.1",
     "express": "^4.16.1",
     "helmet": "^3.8.2",
-    "morgan": "^1.9.0",
-    "@zerointermittency/date": "^1.0.0"
+    "morgan": "^1.9.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "eslint": "^4.15.0",
     "mocha": "^3.5.0",
     "nyc": "^11.3.0",
     "test-console": "^1.0.0",

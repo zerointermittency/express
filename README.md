@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/c3afc1fac7199fbbc9d5/maintainability)](https://codeclimate.com/github/zerointermittency/express/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c3afc1fac7199fbbc9d5/test_coverage)](https://codeclimate.com/github/zerointermittency/express/test_coverage)
+[![Build Status](https://travis-ci.org/zerointermittency/express.svg?branch=master)](https://travis-ci.org/zerointermittency/express)
+
 # Bienvenido
 
 Este modulo es el encargado de proporcionar la base para los servicios, esta basado en **[express][express]**.
