@@ -1,6 +1,10 @@
+[![Build Status](https://travis-ci.org/zerointermittency/express.svg?branch=master)](https://travis-ci.org/zerointermittency/express)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c3afc1fac7199fbbc9d5/maintainability)](https://codeclimate.com/github/zerointermittency/express/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c3afc1fac7199fbbc9d5/test_coverage)](https://codeclimate.com/github/zerointermittency/express/test_coverage)
-[![Build Status](https://travis-ci.org/zerointermittency/express.svg?branch=master)](https://travis-ci.org/zerointermittency/express)
+[![npm version](https://badge.fury.io/js/%40zerointermittency%2Fexpress.svg)](https://badge.fury.io/js/%40zerointermittency%2Fexpress)
+[![Downloads](https://img.shields.io/npm/dt/@zerointermittency/express.svg)](https://www.npmjs.com/package/@zerointermittency/express)
+[![dependency status](https://david-dm.org/zerointermittency/express.svg)](https://david-dm.org/zerointermittency/express)
+[![devDependency status](https://david-dm.org/zerointermittency/express/dev-status.svg)](https://david-dm.org/zerointermittency/express)
 
 # Bienvenido
 
