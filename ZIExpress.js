@@ -15,11 +15,12 @@ class ZIExpress {
             options.bodyParser = {
                 json: {type: 'application/json', limit: '10mb'},
             };
-        if (!options.ipHeaders) options.ipHeaders = ['x-web-for', 'x-forwarded-for'];
+        if (!options.ipHeaders || !Array.isArray(options.ipHeaders))
+            options.ipHeaders = ['x-web-for', 'x-forwarded-for'];
         this.core = express();
         this.port = port;
         this.ip = ip;
-        this.core.use(compression());
+        this.core.use(compression(options.compression));
         this.core.use(BodyParser.json(options.bodyParser.json));
         this.core.use(helmet(options.helmet));
         this.core.use(core.middlewares.ip(options.ipHeaders));

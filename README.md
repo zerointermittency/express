@@ -8,7 +8,7 @@
 
 # Bienvenido
 
-Este modulo es el encargado de proporcionar la base para los servicios, esta basado en **[express][express]**.
+Este modulo tiene como objetivo tener todas las buenas practicas y módulos que sean necesarios para levantar un proyecto basado en **[express][express]** que sea robusto y seguro.
 
 ## Instalación
 
@@ -21,7 +21,7 @@ yarn add @zerointermittency/express
 
 El modulo utiliza **[express][express]**, para poder utilizar sus funcionalidades e incluir funcionalidades extras para todas las rutas que se generen.
 
-> Importante: para poder visualizar la información de desarrollo ```DEBUG=npm-express:*```
+> Importante: para poder visualizar la información de desarrollo ```DEBUG=zi-express:*```
 
 ##### Iniciar
 
@@ -29,17 +29,21 @@ Se instancia un objeto como se hace a continuación:
 
 ```javascript
 const ZIExpress = require('@zerointermittency/express');
-let express = new ZIExpress(opts);
+let express = new ZIExpress(args);
 ```
 
 **Argumentos**:
 
-- options \(*Object*\):
+- args \(*Object*\):
     - port \(*Number*\): puerto donde se alojan las rutas, por defecto: **8080**
     - ip \(*String*\): ip donde se alojan las rutas, por defecto: **'0.0.0.0'**
-    - bodyParser \(*Object*\)
-        - json \(*Object*\): opciones para el modulo [body-parser][body-parser], el cual permite entregar información en formato json, por defecto: ```{type: 'application/json', limit: '10mb'}```
-    - logger \(*Object/Boolean*\): si es **false** no despliega información sobre las peticiones que se realizan a cada ruta, por defecto: ```{level: 'warn', format: 'nunchee'}```
+    - options \(*Object*\):
+        - bodyParser \(*Object*\)
+            - json \(*Object*\): opciones para el modulo [body-parser][body-parser], el cual permite entregar información en formato json, por defecto: ```{type: 'application/json', limit: '10mb'}```
+        - logger \(*Object/Boolean*\): si es **false** no despliega información sobre las peticiones que se realizan a cada ruta, por defecto: ```{level: 'warn', format: 'zi'}```
+        - ipHeaders \(*[String]*\): headers http desde donde se puede capturar la ip de la petición, por defecto: ```['x-web-for', 'x-forwarded-for']``` (el orden del arreglo tiene prioridad)
+        - compression \(*Object*\): opciones para el middleware [compression][compression]
+        - helmet \(*Object*\): opciones para el [helmet][helmet]
 
 **Retorna**:
 
@@ -109,3 +113,4 @@ Todos los cambios importantes son escritos [aquí](CHANGELOG.md).
 [express-router]: https://expressjs.com/en/4x/api.html#express.router
 [app-use]: https://expressjs.com/en/4x/api.html#app.use
 [docs-express]: https://expressjs.com/en/4x/api.html
+[compression]: https://www.npmjs.com/package/compression

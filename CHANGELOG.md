@@ -4,7 +4,13 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 
 ### [Unreleased]
 
-### [2.0.0] - 2018-01-08
+### [2.0.0] - 2018-02-23
+#### Changed
+- Se actualiza documentación
+- Opciones para [compression][compression]
+- Actualizacion dependencias de desarrollo
+
+### [2.0.0] - 2018-02-22
 #### Changed
 - Se modifica la forma en que se reciben las opciones al momento de crear una instancia de ZIExpress
 - Se permite opciones para las cabeceras desde las cuales se capturen la ip, por defecto "x-web-for" y "x-forwarded-for"
@@ -35,3 +41,4 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 [istanbul]: https://istanbul.js.org/
 [debug]: https://www.npmjs.com/package/debug
 [eslint-config-zi]: https://github.com/zerointermittency/eslint-config-zi
+[compression]: https://www.npmjs.com/package/compression
