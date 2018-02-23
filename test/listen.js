@@ -2,7 +2,10 @@
 
 describe('listen', () => {
     it('success', (done) => {
-        const express = new _ZIExpress({port: 8000, logger: true});
-        express.listen(() => done());
+        const ziexpress = new _ZIExpress({
+            port: 4000,
+            ip: '0.0.0.0',
+        });
+        ziexpress.listen(() => done());
     });
 });

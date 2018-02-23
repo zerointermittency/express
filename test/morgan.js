@@ -2,26 +2,26 @@
 
 const morgan = require('morgan');
 
-describe('npm morgan', function () {
-    const express = new _ZIExpress(),
-        expressMorganStatusErrors = new _ZIExpress(),
+describe('npm morgan', function() {
+    const ziexpress = new _ZIExpress({options: {logger: false}}),
+        ziexpressMorganStatusErrors = new _ZIExpress({options: {logger: false}}),
         format = morgan.compile(':method :url :status');
     morgan.format('jota', format);
 
-    express.use(morgan('jota'));
-    express.route('/test')
+    ziexpress.use(morgan('jota'));
+    ziexpress.route('/test')
         .get((req, res) => res.status(200).json({data: true}));
 
-    expressMorganStatusErrors.use(
-        morgan(':method :url :status', {skip: (req, res) => res.statusCode < 400 })
+    ziexpressMorganStatusErrors.use(
+        morgan(':method :url :status', {skip: (req, res) => res.statusCode < 400})
     );
-    expressMorganStatusErrors.route('/test200')
+    ziexpressMorganStatusErrors.route('/test200')
         .get((req, res) => res.status(200).json({data: true}));
-    expressMorganStatusErrors.route('/test401')
+    ziexpressMorganStatusErrors.route('/test401')
         .get((req, res) => res.status(401).json({data: true}));
 
     it(':method :url :status', (done) => {
-        let request = _chaiHttp.request(express.core),
+        let request = _chaiHttp.request(ziexpress.core),
             inspect = _stdout.inspect();
         request.get('/test').end((err, res) => {
             inspect.restore();
@@ -32,7 +32,7 @@ describe('npm morgan', function () {
         });
     });
     it(':method :url :status - skip statusCode < 400', (done) => {
-        let request = _chaiHttp.request(expressMorganStatusErrors.core),
+        let request = _chaiHttp.request(ziexpressMorganStatusErrors.core),
             inspect = _stdout.inspect();
         request.get('/test200').end((err, res) => {
             inspect.restore();
@@ -51,10 +51,12 @@ describe('npm morgan', function () {
     });
 });
 
-describe('morgan format nunchee', function () {
+describe('morgan format nunchee', function() {
     const express = new _ZIExpress({
-        logger: {format: 'nunchee'},
-        bodyParser: {json: {type: 'application/json'}},
+        options: {
+            logger: {format: 'zi'},
+            bodyParser: {json: {type: 'application/json'}},
+        },
     });
     express.route('/test200')
         .get((req, res) => res.status(200).json({data: true}));
@@ -126,7 +128,9 @@ describe('morgan format nunchee', function () {
             });
     });
     it('get active logger statusCode 200', (done) => {
-        const expressDevelop = new _ZIExpress({logger: {level: 'debug'}});
+        const expressDevelop = new _ZIExpress({
+            options: {logger: {level: 'debug'}},
+        });
 
         expressDevelop.route('/test200')
             .get((req, res) => res.status(200).json({data: true}));
@@ -144,7 +148,9 @@ describe('morgan format nunchee', function () {
             });
     });
     it('inactive logger', (done) => {
-        const expressDevelop = new _ZIExpress({logger: false});
+        const expressDevelop = new _ZIExpress({options: {
+            logger: false},
+        });
 
         expressDevelop.route('/test401')
             .get((req, res) => res.status(401).json({data: true}))

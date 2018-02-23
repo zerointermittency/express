@@ -1,0 +1,11 @@
+{
+    "globals": {
+        "_path": true,
+        "_expect": true,
+        "_assert": true,
+        "_stdout": true,
+        "_chaiHttp": true,
+        "_ZIDate": true,
+        "_ZIExpress": true
+    }
+}

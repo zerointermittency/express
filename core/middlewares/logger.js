@@ -3,7 +3,6 @@
 const morgan = require('../morgan.js');
 
 module.exports = (logger) => {
-    if (!logger) return (req, res, next) => next();
     let status;
     if (logger.level && ['error', 'warn'].indexOf(logger.level) !== -1)
         status = 400;

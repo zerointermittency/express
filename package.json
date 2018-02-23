@@ -1,12 +1,13 @@
 {
   "name": "@zerointermittency/express",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "ZIExpress.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint **/*.js",
-    "test": "nyc node --max_old_space_size=4096 test/index.js",
-    "test-nyan": "REPORTER=nyan node --max_old_space_size=4096 test/index.js",
-    "benchmark": "node --max_old_space_size=4096"
+    "eslint": "./node_modules/.bin/eslint . --ext '.js'",
+    "debug": "DEBUG=zi-express* node --max_old_space_size=8192 test/index.js",
+    "debug-all": "DEBUG=* node --max_old_space_size=8192 test/index.js",
+    "test": "node --max_old_space_size=8192 test/index.js",
+    "nyc": "nyc node --max_old_space_size=8192 test/index.js"
   },
   "keywords": [
     "express",
@@ -30,9 +31,10 @@
     "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "@zerointermittency/eslint-config-zi": "^1.0.2",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "eslint": "^4.15.0",
+    "eslint": "^4.18.1",
     "mocha": "^3.5.0",
     "nyc": "^11.3.0",
     "test-console": "^1.0.0",
