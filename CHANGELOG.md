@@ -4,7 +4,11 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 
 ### [Unreleased]
 
-### [2.0.0] - 2018-02-23
+### [2.0.2] - 2018-02-25
+#### Fixed
+- Error en traspaso de argumentos a las funciones de [express][express]
+
+### [2.0.1] - 2018-02-23
 #### Changed
 - Se actualiza documentación
 - Opciones para [compression][compression]

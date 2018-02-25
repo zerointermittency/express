@@ -45,19 +45,19 @@ class ZIExpress {
     }
 
     use(...args) {
-        return this.core.use(args);
+        return this.core.use(...args);
     }
 
     route(...args) {
-        return this.core.route(args);
+        return this.core.route(...args);
     }
 
     static Router(...args) {
-        return express.Router(args);
+        return express.Router(...args);
     }
 
     Router(...args) {
-        return this.constructor.Router(args);
+        return this.constructor.Router(...args);
     }
 }
 

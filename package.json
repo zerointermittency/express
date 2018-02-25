@@ -1,6 +1,6 @@
 {
   "name": "@zerointermittency/express",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "ZIExpress.js",
   "scripts": {
     "eslint": "./node_modules/.bin/eslint . --ext '.js'",
